@@ -1,0 +1,143 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[greek,english]{babel}  % For Greek and English languages
+\usepackage{graphicx}              % For including images like logos
+\usepackage{tocloft}               % For customizing table of contents
+
+\usepackage[left=2.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{tabularx} % for adjusting column widths
+\usepackage{booktabs} % For better-looking tables
+\usepackage[table]{xcolor} % For color in tables
+\usepackage{colortbl} % For color in tables
+\usepackage{alphabeta}
+\usepackage{babelbib}                    
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{rsfso}
+\usepackage{xcolor}
+\usepackage{csvsimple}
+\usepackage{float} % for [H] placement specifier
+\usepackage{parskip}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+\usepackage{circuitikz}
+\usepackage{chngcntr}
+\usepackage{array} % for custom column widths
+\usepackage{enumitem}
+\setlist{noitemsep} % Χωρίς επιπλέον κενά μεταξύ των αντικειμένων της λίστας
+\usepackage{appendix}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{float}
+
+\usepackage[fixlanguage]{babelbib} % Add fixlanguage option here
+
+\newcommand{\gr}{\selectlanguage{greek}}  % Switch to Greek
+\newcommand{\en}{\selectlanguage{english}}  % Switch to English
+
+
+\begin{document}
+
+\gr
+
+% Cover Page
+\include{cover}
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+% Start with Roman numbering for the front matter
+\pagenumbering{roman}
+
+% Σύνοψη
+\chapter*{Σύνοψη}
+\addcontentsline{toc}{chapter}{Σύνοψη}  % Add Περίληψη to the table of contents
+Στην εργασία αυτή μελετάται μία μεθοδολογία βελτιστοποίησης της λειτουργίας ενός μικροδικτύου. Το μικροδίκτυο αυτό περιλαμβάνει μονάδα κυψελών καυσίμου (υδρογόνου), κατανεμημένες παραγωγές (ανεμογεννήτριες, φωτοβολταϊκά πάνελ), μονάδες αποθήκευσης ηλεκτρισμού και ευέλικτα φορτία. Εξετάζεται η λειτουργία του μικροδικτύου τόσο σε αυτόνομη \en (islanded) \gr όσο και σε διασυνδεδέμενη \en (grid-connected) \gr κατάσταση. Μελετώνται επίσης διάφορα σενάρια για την τιμή πώλησης και αγοράς της ενέργειας καθώς και για τις μεταβολές της ζήτησης. Η βελτιστοποίηση αφορά την ελαχιστοποίηση του συνολικού κόστους λειτουργίας του μικροδικτύου με οικονομικούς όρους. Τέλος, πραγματοποιείται μία εκτίμηση του ποσού εκπομπών αέριων ρύπων στο βέλτιστο σημείο λειτουργίας του μικροδικτύου. Η επίλυση του προβλήματος βελτιστοποίησης γίνεται στην \en python \gr με χρήση του επιλύτη \en gurobi). \gr
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+% Greek abstract (Περίληψη)
+\chapter*{Περίληψη}
+\addcontentsline{toc}{chapter}{Περίληψη}  % Add Περίληψη to the table of contents
+Your Greek abstract text here...
+
+% Greek keywords section (Λέξεις Κλειδιά)
+\noindent\textbf{Λέξεις Κλειδιά:} Your Greek keywords here...
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+% Abstract in English
+\en
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}  % Add Abstract to the table of contents
+Your abstract text in English here...
+
+% Keywords section (after the abstract)
+\noindent\textbf{Keywords:} Your keywords in English here...
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+% Acknowledgments
+\gr
+\chapter*{Ευχαριστίες}
+\addcontentsline{toc}{chapter}{Ευχαριστίες}  % Add Ευχαριστίες to the table of contents
+Your acknowledgments in Greek here...
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+% Table of contents, list of figures, and tables
+\addcontentsline{toc}{chapter}{Περιεχόμενα}  % Add Table of Contents to TOC
+\tableofcontents
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+\addcontentsline{toc}{chapter}{Κατάλογος Σχημάτων}  % Add List of Figures to TOC
+\listoffigures
+
+\newpage  % Create a new page
+\thispagestyle{empty}  % Suppress page numbering on this page
+\mbox{}  % Insert an empty box to ensure the page exists but is blank
+
+\addcontentsline{toc}{chapter}{Κατάλογος Πινάκων}  % Add List of Tables to TOC
+\listoftables
+
+% "Εισαγωγή" as an unnumbered chapter and add to the table of contents
+\chapter*{Εισαγωγή}
+\addcontentsline{toc}{chapter}{Εισαγωγή}
+Όσο περίεργο κι αν μας ακούγεται, η πρόσβαση σε πηγές ηλεκτρικής ενέργειας για κάποιους εκατομμύρια ανθρώπους τη σήμερον ημέρα αποτελεί πολυτέλεια. Συγκεκριμένα, σύμφωνα με πηγές, περισσότερο από ένα δισεκατομμύριο άνθρωποι παγκοσμίως δεν έχουν πρόσβαση σε ηλεκτρική ενέργεια σήμερα. 
+Οι λόγοι είναι σίγουρα οικονομικοί, πολιτικοί αλλά και τεχνικοί. Στα πλαίσια αυτού έχουν εμφανιστεί σε πολλές απομακρυσμένες περιοχές τα λεγόμενα μικροδίκτυα. 
+
+% Now switching to Arabic numbering for the main content
+\clearpage
+\pagenumbering{arabic}
+
+% Main content starts here with Arabic numbering and numbered chapters
+\include{chapter1} 
+\include{chapter2}  
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+\include{chapter7}
+\include{appA}
+
+% \nocite{*} % To show all references in the bibliography
+
+% Change bibliography language to Greek and show Greek title "Βιβλιογραφία"
+\selectbiblanguage{greek}
+\bibliographystyle{babplain} 
+\bibliography{bibliography} 
+
+\end{document}
